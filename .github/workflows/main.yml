@@ -1,0 +1,14 @@
+name: Generate Codespace Token
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  generate_token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook
+        uses: octokit/request@v2
+        with:
+          url: http://localhost:8080/generate-token
